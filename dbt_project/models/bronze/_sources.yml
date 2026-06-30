@@ -1,0 +1,41 @@
+version: 2
+
+sources:
+  - name: bronze
+    description: "Raw ingested repair records from fleet data sources"
+    schema: bronze
+    tables:
+      - name: repair_records_raw
+        description: "Immutable raw repair records, source of truth"
+        columns:
+          - name: record_id
+            description: "Surrogate primary key"
+            tests:
+              - unique
+              - not_null
+          - name: vin
+            description: "17-character vehicle identifier"
+            tests:
+              - not_null
+          - name: repair_date
+            description: "Date the repair was logged"
+            tests:
+              - not_null
+          - name: component
+            description: "Vehicle component that failed"
+            tests:
+              - not_null
+              - accepted_values:
+                  values:
+                    - "Battery Pack"
+                    - "Drive Unit"
+                    - "Suspension"
+                    - "Brakes"
+                    - "HVAC System"
+                    - "Autopilot Sensors"
+                    - "Charging Port"
+                    - "Thermal Management"
+                    - "Power Electronics"
+                    - "Body & Trim"
+          - name: record_hash
+            description: "SHA-256 hash for deduplication"
