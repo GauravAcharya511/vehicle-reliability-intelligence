@@ -1,6 +1,6 @@
 # Vehicle Field Reliability Intelligence System
 
-An end-to-end data engineering platform that mirrors real-world vehicle fleet reliability operations — ingesting repair records, detecting failure trends, forecasting component failures, and surfacing insights via an interactive dashboard.
+An end-to-end data engineering platform that mirrors real-world vehicle fleet reliability operations, ingesting repair records, detecting failure trends, forecasting component failures, and surfacing insights via an interactive dashboard.
 
 ## Tech Stack
 
