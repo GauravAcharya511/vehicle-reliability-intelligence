@@ -95,11 +95,41 @@ with DAG(
         doc_md="Runs all dbt data quality tests",
     )
 
+    spark_mttf = BashOperator(
+        task_id="spark_mttf_analysis",
+        bash_command=(
+            f"cd {PROJECT_ROOT} && "
+            f"python -m analytics.mttf_analysis"
+        ),
+        on_success_callback=task_success_callback,
+        doc_md="PySpark MTTF computation per component and model",
+    )
+
+    spark_rolling = BashOperator(
+        task_id="spark_failure_rate_rolling",
+        bash_command=(
+            f"cd {PROJECT_ROOT} && "
+            f"python -m analytics.failure_rate_rolling"
+        ),
+        on_success_callback=task_success_callback,
+        doc_md="PySpark 30/60/90-day rolling failure rates",
+    )
+
+    spark_clusters = BashOperator(
+        task_id="spark_failure_clusters",
+        bash_command=(
+            f"cd {PROJECT_ROOT} && "
+            f"python -m analytics.failure_clusters"
+        ),
+        on_success_callback=task_success_callback,
+        doc_md="PySpark regional + temporal failure clustering",
+    )
+
     notify_success = BashOperator(
         task_id="notify_pipeline_success",
         bash_command='echo "Pipeline completed successfully at $(date)"',
         doc_md="Final success marker for SLA tracking",
     )
 
-    # Task dependencies
-    generate_data >> ingest_bronze >> dbt_run >> dbt_test >> notify_success
+    generate_data >> ingest_bronze >> dbt_run >> dbt_test
+    dbt_test >> [spark_mttf, spark_rolling, spark_clusters] >> notify_success
