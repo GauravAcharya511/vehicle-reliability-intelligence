@@ -12,7 +12,7 @@ from dotenv import load_dotenv
 from sqlalchemy import create_engine
 from sqlalchemy.engine import Engine
 
-load_dotenv()
+load_dotenv(override=False)
 
 
 def get_database_url() -> str:

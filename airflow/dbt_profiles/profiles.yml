@@ -1,0 +1,12 @@
+vehicle_reliability:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: host.docker.internal
+      port: 5432
+      user: gauravacharya
+      password: ""
+      dbname: vehicle_reliability
+      schema: silver
+      threads: 4
