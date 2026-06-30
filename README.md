@@ -17,12 +17,12 @@ An end-to-end data engineering platform that mirrors real-world vehicle fleet re
 
 In Progress - Active development. Days 1-6 being built iteratively.
 
-Day 1 - Data foundation + PostgreSQL + dbt - COMPLETE
-Day 2 - Airflow + dbt orchestration via Docker - COMPLETE
-Day 3 - PySpark time-series + MTTF analysis - Upcoming
-Day 4 - HuggingFace NLP classifier - Upcoming
-Day 5 - Prophet + LSTM forecasting - Upcoming
-Day 6 - Streamlit dashboard + GCP deploy - Upcoming
+Phase 1 - Data foundation + PostgreSQL + dbt 
+Phase 2 - Airflow + dbt orchestration via Docker 
+Phase 3 - PySpark time-series + MTTF analysis - Upcoming
+Phase 4 - HuggingFace NLP classifier - Upcoming
+Phase 5 - Prophet + LSTM forecasting - Upcoming
+Phase 6 - Streamlit dashboard + GCP deploy - Upcoming
 
 ## Setup
 
