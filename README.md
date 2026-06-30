@@ -19,7 +19,7 @@ In Progress - Active development. Days 1-6 being built iteratively.
 
 Phase 1 - Data foundation + PostgreSQL + dbt 
 Phase 2 - Airflow + dbt orchestration via Docker 
-Phase 3 - PySpark time-series + MTTF analysis - Upcoming
+Phase 3 -  PySpark time-series + MTTF + clustering
 Phase 4 - HuggingFace NLP classifier - Upcoming
 Phase 5 - Prophet + LSTM forecasting - Upcoming
 Phase 6 - Streamlit dashboard + GCP deploy - Upcoming
