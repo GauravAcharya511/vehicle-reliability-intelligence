@@ -1,0 +1,30 @@
+# Environment
+.env
+*.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+
+# Data files (keep schema, not raw data)
+data_generator/output/
+*.csv
+*.parquet
+
+# dbt
+dbt_project/target/
+dbt_project/logs/
+dbt_project/.user.yml
+
+# Airflow
+airflow/logs/
+airflow/plugins/
+
+# OS
+.DS_Store
+*.swp
