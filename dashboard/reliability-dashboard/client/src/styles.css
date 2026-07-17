@@ -1,0 +1,403 @@
+:root {
+  /* Instrument-panel surface */
+  --bg: #0b0f14;
+  --panel: #12181f;
+  --panel-raised: #161d26;
+  --line: #212a35;
+  --line-soft: #1a222c;
+
+  /* Text */
+  --text: #e6edf3;
+  --text-dim: #8b98a5;
+  --text-faint: #5b6672;
+
+  /* Instrumentation accent */
+  --accent: #4cc2ff;
+
+  /* Reliability status scale */
+  --ok: #3fb950;
+  --warn: #d29922;
+  --high: #f0883e;
+  --crit: #f85149;
+
+  --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --sans: "IBM Plex Sans", system-ui, -apple-system, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  -webkit-font-smoothing: antialiased;
+  background-image: radial-gradient(
+    ellipse 90% 60% at 50% -10%,
+    rgba(76, 194, 255, 0.06),
+    transparent 70%
+  );
+}
+
+.app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 28px 24px 64px;
+}
+
+/* ---------- Masthead ---------- */
+.masthead {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 18px;
+  margin-bottom: 22px;
+}
+
+.masthead h1 {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.pulse {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--ok);
+  box-shadow: 0 0 0 0 rgba(63, 185, 80, 0.5);
+  animation: pulse 2.4s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(63, 185, 80, 0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 7px rgba(63, 185, 80, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(63, 185, 80, 0);
+  }
+}
+
+.masthead .sub {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--text-faint);
+  margin-top: 6px;
+  letter-spacing: 0.02em;
+}
+
+.masthead .asof {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--text-dim);
+  text-align: right;
+  line-height: 1.7;
+}
+
+.asof .mode {
+  color: var(--accent);
+}
+
+/* ---------- KPI strip ---------- */
+.kpi-strip {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  margin-bottom: 22px;
+}
+
+.kpi {
+  background: var(--panel);
+  padding: 16px 18px;
+}
+
+.kpi .label {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+.kpi .value {
+  font-family: var(--mono);
+  font-size: 26px;
+  font-weight: 500;
+  margin-top: 8px;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+}
+
+.kpi .unit {
+  font-size: 12px;
+  color: var(--text-dim);
+  margin-left: 4px;
+}
+
+.kpi .delta {
+  font-family: var(--mono);
+  font-size: 11px;
+  margin-top: 6px;
+}
+
+.delta.up {
+  color: var(--crit);
+}
+.delta.down {
+  color: var(--ok);
+}
+
+/* ---------- Panel grid ---------- */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  padding: 18px 18px 8px;
+}
+
+.panel.wide {
+  grid-column: 1 / -1;
+}
+
+.panel-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.panel-head h2 {
+  font-size: 13px;
+  font-weight: 600;
+  margin: 0;
+  letter-spacing: 0.01em;
+}
+
+.panel-head .hint {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  color: var(--text-faint);
+}
+
+.panel-desc {
+  font-size: 11.5px;
+  color: var(--text-dim);
+  margin: 0 0 14px;
+}
+
+/* ---------- Regional table ---------- */
+.reg-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12.5px;
+}
+
+.reg-table th {
+  text-align: left;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  font-weight: 500;
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--line);
+}
+
+.reg-table td {
+  padding: 10px 10px;
+  border-bottom: 1px solid var(--line-soft);
+  font-variant-numeric: tabular-nums;
+}
+
+.reg-table tr:last-child td {
+  border-bottom: none;
+}
+
+.reg-table .num {
+  font-family: var(--mono);
+  text-align: right;
+}
+
+.ratio-bar {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.ratio-track {
+  flex: 1;
+  height: 6px;
+  background: var(--line);
+  position: relative;
+}
+
+.ratio-fill {
+  height: 100%;
+  background: var(--accent);
+}
+
+.badge {
+  font-family: var(--mono);
+  font-size: 9.5px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 2px 7px;
+  border: 1px solid currentColor;
+  color: var(--crit);
+  white-space: nowrap;
+}
+
+/* ---------- Failure modes ---------- */
+.mode-row {
+  display: grid;
+  grid-template-columns: 14px 1fr auto;
+  align-items: center;
+  gap: 12px;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.mode-row:last-child {
+  border-bottom: none;
+}
+
+.sev-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+.sev-critical {
+  background: var(--crit);
+}
+.sev-high {
+  background: var(--high);
+}
+.sev-medium {
+  background: var(--warn);
+}
+.sev-low {
+  background: var(--text-dim);
+}
+
+.mode-name {
+  font-size: 12.5px;
+}
+
+.mode-meter {
+  height: 6px;
+  background: var(--line);
+  margin-top: 5px;
+}
+.mode-meter span {
+  display: block;
+  height: 100%;
+}
+
+.mode-count {
+  font-family: var(--mono);
+  font-size: 12.5px;
+  color: var(--text-dim);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- Chart tooltip ---------- */
+.tt {
+  background: var(--panel-raised);
+  border: 1px solid var(--line);
+  padding: 9px 11px;
+  font-family: var(--mono);
+  font-size: 11px;
+}
+.tt .tt-label {
+  color: var(--text-dim);
+  margin-bottom: 5px;
+}
+.tt .tt-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+/* ---------- Legend ---------- */
+.legend {
+  display: flex;
+  gap: 16px;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  color: var(--text-dim);
+  margin-bottom: 8px;
+}
+.legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.swatch {
+  width: 14px;
+  height: 2px;
+}
+
+/* ---------- States ---------- */
+.state {
+  display: grid;
+  place-items: center;
+  min-height: 70vh;
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--text-dim);
+}
+.state .err {
+  color: var(--crit);
+  max-width: 420px;
+  text-align: center;
+  line-height: 1.6;
+}
+
+@media (max-width: 860px) {
+  .kpi-strip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .masthead {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .masthead .asof {
+    text-align: left;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pulse {
+    animation: none;
+  }
+}

@@ -1,0 +1,707 @@
+{
+  "summary": {
+    "total_units": 29559,
+    "total_failures": 2515,
+    "fleet_mttf_miles": 78360,
+    "active_hotspots": 3,
+    "overall_30d_failures": 456,
+    "trend_pct": 10.7,
+    "as_of": "2026-08-12"
+  },
+  "mttfByComponent": [
+    {
+      "component": "Charging Port",
+      "mttf_miles": 36219,
+      "failures": 550,
+      "units": 2988
+    },
+    {
+      "component": "Thermal Management",
+      "mttf_miles": 45158,
+      "failures": 149,
+      "units": 1006
+    },
+    {
+      "component": "HVAC System",
+      "mttf_miles": 48760,
+      "failures": 317,
+      "units": 2319
+    },
+    {
+      "component": "Battery Pack",
+      "mttf_miles": 80378,
+      "failures": 269,
+      "units": 3245
+    },
+    {
+      "component": "Suspension",
+      "mttf_miles": 98566,
+      "failures": 256,
+      "units": 3783
+    },
+    {
+      "component": "Power Electronics",
+      "mttf_miles": 100732,
+      "failures": 262,
+      "units": 3962
+    },
+    {
+      "component": "Drive Unit",
+      "mttf_miles": 101846,
+      "failures": 304,
+      "units": 4642
+    },
+    {
+      "component": "Body & Trim",
+      "mttf_miles": 118770,
+      "failures": 245,
+      "units": 4369
+    },
+    {
+      "component": "Autopilot Sensors",
+      "mttf_miles": 125935,
+      "failures": 66,
+      "units": 1239
+    },
+    {
+      "component": "Brakes",
+      "mttf_miles": 137644,
+      "failures": 97,
+      "units": 2006
+    }
+  ],
+  "rollingFailureRate": [
+    {
+      "date": "2026-05-14",
+      "roll_30d": 436,
+      "roll_60d": 436,
+      "roll_90d": 436
+    },
+    {
+      "date": "2026-05-15",
+      "roll_30d": 438,
+      "roll_60d": 452,
+      "roll_90d": 452
+    },
+    {
+      "date": "2026-05-16",
+      "roll_30d": 439,
+      "roll_60d": 467,
+      "roll_90d": 467
+    },
+    {
+      "date": "2026-05-17",
+      "roll_30d": 439,
+      "roll_60d": 481,
+      "roll_90d": 481
+    },
+    {
+      "date": "2026-05-18",
+      "roll_30d": 440,
+      "roll_60d": 495,
+      "roll_90d": 495
+    },
+    {
+      "date": "2026-05-19",
+      "roll_30d": 440,
+      "roll_60d": 510,
+      "roll_90d": 510
+    },
+    {
+      "date": "2026-05-20",
+      "roll_30d": 440,
+      "roll_60d": 524,
+      "roll_90d": 524
+    },
+    {
+      "date": "2026-05-21",
+      "roll_30d": 438,
+      "roll_60d": 538,
+      "roll_90d": 538
+    },
+    {
+      "date": "2026-05-22",
+      "roll_30d": 437,
+      "roll_60d": 552,
+      "roll_90d": 552
+    },
+    {
+      "date": "2026-05-23",
+      "roll_30d": 437,
+      "roll_60d": 566,
+      "roll_90d": 566
+    },
+    {
+      "date": "2026-05-24",
+      "roll_30d": 437,
+      "roll_60d": 581,
+      "roll_90d": 581
+    },
+    {
+      "date": "2026-05-25",
+      "roll_30d": 438,
+      "roll_60d": 596,
+      "roll_90d": 596
+    },
+    {
+      "date": "2026-05-26",
+      "roll_30d": 441,
+      "roll_60d": 612,
+      "roll_90d": 612
+    },
+    {
+      "date": "2026-05-27",
+      "roll_30d": 443,
+      "roll_60d": 628,
+      "roll_90d": 628
+    },
+    {
+      "date": "2026-05-28",
+      "roll_30d": 444,
+      "roll_60d": 643,
+      "roll_90d": 643
+    },
+    {
+      "date": "2026-05-29",
+      "roll_30d": 445,
+      "roll_60d": 658,
+      "roll_90d": 658
+    },
+    {
+      "date": "2026-05-30",
+      "roll_30d": 445,
+      "roll_60d": 672,
+      "roll_90d": 672
+    },
+    {
+      "date": "2026-05-31",
+      "roll_30d": 447,
+      "roll_60d": 687,
+      "roll_90d": 687
+    },
+    {
+      "date": "2026-06-01",
+      "roll_30d": 449,
+      "roll_60d": 703,
+      "roll_90d": 703
+    },
+    {
+      "date": "2026-06-02",
+      "roll_30d": 451,
+      "roll_60d": 718,
+      "roll_90d": 718
+    },
+    {
+      "date": "2026-06-03",
+      "roll_30d": 454,
+      "roll_60d": 734,
+      "roll_90d": 734
+    },
+    {
+      "date": "2026-06-04",
+      "roll_30d": 455,
+      "roll_60d": 750,
+      "roll_90d": 750
+    },
+    {
+      "date": "2026-06-05",
+      "roll_30d": 456,
+      "roll_60d": 765,
+      "roll_90d": 765
+    },
+    {
+      "date": "2026-06-06",
+      "roll_30d": 455,
+      "roll_60d": 780,
+      "roll_90d": 780
+    },
+    {
+      "date": "2026-06-07",
+      "roll_30d": 453,
+      "roll_60d": 793,
+      "roll_90d": 793
+    },
+    {
+      "date": "2026-06-08",
+      "roll_30d": 451,
+      "roll_60d": 806,
+      "roll_90d": 806
+    },
+    {
+      "date": "2026-06-09",
+      "roll_30d": 448,
+      "roll_60d": 819,
+      "roll_90d": 819
+    },
+    {
+      "date": "2026-06-10",
+      "roll_30d": 444,
+      "roll_60d": 832,
+      "roll_90d": 832
+    },
+    {
+      "date": "2026-06-11",
+      "roll_30d": 442,
+      "roll_60d": 846,
+      "roll_90d": 846
+    },
+    {
+      "date": "2026-06-12",
+      "roll_30d": 439,
+      "roll_60d": 860,
+      "roll_90d": 860
+    },
+    {
+      "date": "2026-06-13",
+      "roll_30d": 437,
+      "roll_60d": 873,
+      "roll_90d": 873
+    },
+    {
+      "date": "2026-06-14",
+      "roll_30d": 435,
+      "roll_60d": 873,
+      "roll_90d": 887
+    },
+    {
+      "date": "2026-06-15",
+      "roll_30d": 433,
+      "roll_60d": 873,
+      "roll_90d": 900
+    },
+    {
+      "date": "2026-06-16",
+      "roll_30d": 432,
+      "roll_60d": 872,
+      "roll_90d": 914
+    },
+    {
+      "date": "2026-06-17",
+      "roll_30d": 431,
+      "roll_60d": 871,
+      "roll_90d": 926
+    },
+    {
+      "date": "2026-06-18",
+      "roll_30d": 430,
+      "roll_60d": 870,
+      "roll_90d": 939
+    },
+    {
+      "date": "2026-06-19",
+      "roll_30d": 429,
+      "roll_60d": 868,
+      "roll_90d": 953
+    },
+    {
+      "date": "2026-06-20",
+      "roll_30d": 429,
+      "roll_60d": 867,
+      "roll_90d": 966
+    },
+    {
+      "date": "2026-06-21",
+      "roll_30d": 428,
+      "roll_60d": 865,
+      "roll_90d": 979
+    },
+    {
+      "date": "2026-06-22",
+      "roll_30d": 427,
+      "roll_60d": 864,
+      "roll_90d": 993
+    },
+    {
+      "date": "2026-06-23",
+      "roll_30d": 426,
+      "roll_60d": 863,
+      "roll_90d": 1007
+    },
+    {
+      "date": "2026-06-24",
+      "roll_30d": 424,
+      "roll_60d": 863,
+      "roll_90d": 1021
+    },
+    {
+      "date": "2026-06-25",
+      "roll_30d": 423,
+      "roll_60d": 864,
+      "roll_90d": 1035
+    },
+    {
+      "date": "2026-06-26",
+      "roll_30d": 422,
+      "roll_60d": 864,
+      "roll_90d": 1050
+    },
+    {
+      "date": "2026-06-27",
+      "roll_30d": 421,
+      "roll_60d": 865,
+      "roll_90d": 1064
+    },
+    {
+      "date": "2026-06-28",
+      "roll_30d": 420,
+      "roll_60d": 865,
+      "roll_90d": 1078
+    },
+    {
+      "date": "2026-06-29",
+      "roll_30d": 419,
+      "roll_60d": 864,
+      "roll_90d": 1091
+    },
+    {
+      "date": "2026-06-30",
+      "roll_30d": 417,
+      "roll_60d": 863,
+      "roll_90d": 1104
+    },
+    {
+      "date": "2026-07-01",
+      "roll_30d": 414,
+      "roll_60d": 863,
+      "roll_90d": 1116
+    },
+    {
+      "date": "2026-07-02",
+      "roll_30d": 411,
+      "roll_60d": 862,
+      "roll_90d": 1129
+    },
+    {
+      "date": "2026-07-03",
+      "roll_30d": 408,
+      "roll_60d": 862,
+      "roll_90d": 1142
+    },
+    {
+      "date": "2026-07-04",
+      "roll_30d": 407,
+      "roll_60d": 862,
+      "roll_90d": 1156
+    },
+    {
+      "date": "2026-07-05",
+      "roll_30d": 406,
+      "roll_60d": 861,
+      "roll_90d": 1171
+    },
+    {
+      "date": "2026-07-06",
+      "roll_30d": 405,
+      "roll_60d": 859,
+      "roll_90d": 1184
+    },
+    {
+      "date": "2026-07-07",
+      "roll_30d": 405,
+      "roll_60d": 859,
+      "roll_90d": 1199
+    },
+    {
+      "date": "2026-07-08",
+      "roll_30d": 407,
+      "roll_60d": 858,
+      "roll_90d": 1214
+    },
+    {
+      "date": "2026-07-09",
+      "roll_30d": 409,
+      "roll_60d": 857,
+      "roll_90d": 1228
+    },
+    {
+      "date": "2026-07-10",
+      "roll_30d": 411,
+      "roll_60d": 855,
+      "roll_90d": 1243
+    },
+    {
+      "date": "2026-07-11",
+      "roll_30d": 410,
+      "roll_60d": 853,
+      "roll_90d": 1256
+    },
+    {
+      "date": "2026-07-12",
+      "roll_30d": 411,
+      "roll_60d": 850,
+      "roll_90d": 1270
+    },
+    {
+      "date": "2026-07-13",
+      "roll_30d": 412,
+      "roll_60d": 849,
+      "roll_90d": 1285
+    },
+    {
+      "date": "2026-07-14",
+      "roll_30d": 413,
+      "roll_60d": 848,
+      "roll_90d": 1286
+    },
+    {
+      "date": "2026-07-15",
+      "roll_30d": 414,
+      "roll_60d": 848,
+      "roll_90d": 1287
+    },
+    {
+      "date": "2026-07-16",
+      "roll_30d": 416,
+      "roll_60d": 849,
+      "roll_90d": 1288
+    },
+    {
+      "date": "2026-07-17",
+      "roll_30d": 420,
+      "roll_60d": 851,
+      "roll_90d": 1291
+    },
+    {
+      "date": "2026-07-18",
+      "roll_30d": 423,
+      "roll_60d": 853,
+      "roll_90d": 1293
+    },
+    {
+      "date": "2026-07-19",
+      "roll_30d": 425,
+      "roll_60d": 854,
+      "roll_90d": 1293
+    },
+    {
+      "date": "2026-07-20",
+      "roll_30d": 426,
+      "roll_60d": 855,
+      "roll_90d": 1293
+    },
+    {
+      "date": "2026-07-21",
+      "roll_30d": 428,
+      "roll_60d": 855,
+      "roll_90d": 1293
+    },
+    {
+      "date": "2026-07-22",
+      "roll_30d": 429,
+      "roll_60d": 856,
+      "roll_90d": 1293
+    },
+    {
+      "date": "2026-07-23",
+      "roll_30d": 431,
+      "roll_60d": 856,
+      "roll_90d": 1293
+    },
+    {
+      "date": "2026-07-24",
+      "roll_30d": 432,
+      "roll_60d": 856,
+      "roll_90d": 1295
+    },
+    {
+      "date": "2026-07-25",
+      "roll_30d": 433,
+      "roll_60d": 856,
+      "roll_90d": 1296
+    },
+    {
+      "date": "2026-07-26",
+      "roll_30d": 433,
+      "roll_60d": 854,
+      "roll_90d": 1297
+    },
+    {
+      "date": "2026-07-27",
+      "roll_30d": 432,
+      "roll_60d": 853,
+      "roll_90d": 1297
+    },
+    {
+      "date": "2026-07-28",
+      "roll_30d": 432,
+      "roll_60d": 852,
+      "roll_90d": 1297
+    },
+    {
+      "date": "2026-07-29",
+      "roll_30d": 433,
+      "roll_60d": 852,
+      "roll_90d": 1297
+    },
+    {
+      "date": "2026-07-30",
+      "roll_30d": 436,
+      "roll_60d": 852,
+      "roll_90d": 1299
+    },
+    {
+      "date": "2026-07-31",
+      "roll_30d": 437,
+      "roll_60d": 850,
+      "roll_90d": 1300
+    },
+    {
+      "date": "2026-08-01",
+      "roll_30d": 439,
+      "roll_60d": 850,
+      "roll_90d": 1301
+    },
+    {
+      "date": "2026-08-02",
+      "roll_30d": 442,
+      "roll_60d": 850,
+      "roll_90d": 1303
+    },
+    {
+      "date": "2026-08-03",
+      "roll_30d": 444,
+      "roll_60d": 850,
+      "roll_90d": 1305
+    },
+    {
+      "date": "2026-08-04",
+      "roll_30d": 446,
+      "roll_60d": 851,
+      "roll_90d": 1307
+    },
+    {
+      "date": "2026-08-05",
+      "roll_30d": 448,
+      "roll_60d": 853,
+      "roll_90d": 1308
+    },
+    {
+      "date": "2026-08-06",
+      "roll_30d": 450,
+      "roll_60d": 856,
+      "roll_90d": 1309
+    },
+    {
+      "date": "2026-08-07",
+      "roll_30d": 452,
+      "roll_60d": 859,
+      "roll_90d": 1310
+    },
+    {
+      "date": "2026-08-08",
+      "roll_30d": 453,
+      "roll_60d": 862,
+      "roll_90d": 1310
+    },
+    {
+      "date": "2026-08-09",
+      "roll_30d": 454,
+      "roll_60d": 865,
+      "roll_90d": 1309
+    },
+    {
+      "date": "2026-08-10",
+      "roll_30d": 455,
+      "roll_60d": 866,
+      "roll_90d": 1308
+    },
+    {
+      "date": "2026-08-11",
+      "roll_30d": 456,
+      "roll_60d": 866,
+      "roll_90d": 1306
+    },
+    {
+      "date": "2026-08-12",
+      "roll_30d": 456,
+      "roll_60d": 868,
+      "roll_90d": 1305
+    }
+  ],
+  "regional": [
+    {
+      "region": "Northeast",
+      "ratio": 2.06,
+      "vehicles": 1198,
+      "failures": 376,
+      "hotspot": true
+    },
+    {
+      "region": "Southeast",
+      "ratio": 2.05,
+      "vehicles": 1615,
+      "failures": 337,
+      "hotspot": true
+    },
+    {
+      "region": "West",
+      "ratio": 1.81,
+      "vehicles": 624,
+      "failures": 548,
+      "hotspot": true
+    },
+    {
+      "region": "Southwest",
+      "ratio": 1.15,
+      "vehicles": 1290,
+      "failures": 403,
+      "hotspot": false
+    },
+    {
+      "region": "Midwest",
+      "ratio": 1.09,
+      "vehicles": 390,
+      "failures": 286,
+      "hotspot": false
+    },
+    {
+      "region": "Pacific NW",
+      "ratio": 0.66,
+      "vehicles": 640,
+      "failures": 110,
+      "hotspot": false
+    }
+  ],
+  "failureModes": [
+    {
+      "mode": "Coolant flow fault",
+      "severity": "high",
+      "count": 286
+    },
+    {
+      "mode": "Thermal derating",
+      "severity": "critical",
+      "count": 184
+    },
+    {
+      "mode": "Seal degradation",
+      "severity": "low",
+      "count": 149
+    },
+    {
+      "mode": "Sensor calibration drift",
+      "severity": "high",
+      "count": 123
+    },
+    {
+      "mode": "Insulation breakdown",
+      "severity": "critical",
+      "count": 117
+    },
+    {
+      "mode": "Firmware fault",
+      "severity": "medium",
+      "count": 103
+    },
+    {
+      "mode": "Connector wear",
+      "severity": "medium",
+      "count": 57
+    },
+    {
+      "mode": "Cosmetic wear",
+      "severity": "low",
+      "count": 54
+    }
+  ]
+}
