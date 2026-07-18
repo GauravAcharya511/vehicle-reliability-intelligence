@@ -34,6 +34,28 @@ from utils.logger import get_logger
 logger = get_logger(__name__)
 
 
+# Injected regional skew: specific components fail disproportionately in specific
+# regions, so the clustering job has real geographic signal to detect. Any
+# (component, region) pair listed here gets a higher selection weight for that
+# region; everything else stays uniform. This is what turns the regional
+# clustering output from a flat ~1.0x wall into genuine 2-3x hotspots.
+REGIONAL_HOTSPOTS = {
+    "Drive Unit": {"EMEA-East": 3.0},
+    "Battery Pack": {"NA-West": 3.0},
+    "Thermal Management": {"NA-Central": 2.5},
+    "Autopilot Sensors": {"EMEA-West": 2.5},
+    "Charging Port": {"NA-East": 2.2},
+}
+
+
+def pick_region(component: str) -> str:
+    """Weighted region choice: hotspot pairs are over-represented for their
+    component, all other (component, region) pairs stay uniform."""
+    boosts = REGIONAL_HOTSPOTS.get(component, {})
+    weights = [boosts.get(region, 1.0) for region in REGIONS]
+    return random.choices(REGIONS, weights=weights)[0]
+
+
 def generate_vin() -> str:
     """Generate a 17-character VIN-like identifier."""
     return "".join(random.choices(VIN_CHARSET, k=17))
@@ -100,7 +122,7 @@ def generate_records(num_rows: int, seed: int = 42) -> pd.DataFrame:
             "repair_description": description,
             "mileage": mileage,
             "repair_cost_usd": round(random.uniform(cost_min, cost_max), 2),
-            "region": random.choice(REGIONS),
+            "region": pick_region(component),
             "dealer_id": f"DLR-{random.randint(1000, 9999)}",
             "vehicle_model": random.choices(VEHICLE_MODELS, weights=MODEL_WEIGHTS)[0],
             "vehicle_year": vehicle_year,
@@ -138,6 +160,17 @@ def main():
     print(df.head(3).to_string())
     print(f"\nDistribution by component:")
     print(df["component"].value_counts().to_string())
+
+    print(f"\nDistribution by region:")
+    print(df["region"].value_counts().to_string())
+
+    print(f"\nInjected hotspot pairs (component x region share):")
+    for comp, boosts in REGIONAL_HOTSPOTS.items():
+        for region in boosts:
+            subset = df[df["component"] == comp]
+            if len(subset):
+                share = (subset["region"] == region).mean()
+                print(f"  {comp} in {region}: {share:.1%} of that component's failures")
 
 
 if __name__ == "__main__":

@@ -78,16 +78,20 @@ module.exports = {
     ORDER BY repair_date ASC;
   `,
 
+  // Component x region grain: averaging to region level washes out the signal
+  // (one hot component per region + ten normal ones -> ~1.0). The real hotspots
+  // live at the component-region pair level, so surface those directly.
   regional: `
     SELECT
+      component,
       region,
       ROUND(AVG(regional_vs_baseline_ratio)::numeric, 2) AS ratio,
-      SUM(regional_vehicles_affected)::bigint            AS vehicles,
       SUM(regional_failure_count)::bigint                AS failures,
-      bool_or(is_hotspot)                                AS hotspot
+      (AVG(regional_vs_baseline_ratio) >= 1.4)           AS hotspot
     FROM gold.fct_failure_clusters
-    GROUP BY region
-    ORDER BY ratio DESC;
+    GROUP BY component, region
+    ORDER BY ratio DESC
+    LIMIT 8;
   `,
 
   failureModes: `
